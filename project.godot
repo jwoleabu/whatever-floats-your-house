@@ -11,13 +11,19 @@ config_version=5
 [application]
 
 config/name="WFYH"
-run/main_scene="uid://vha5qlbpr3vj"
+run/main_scene="uid://cqdks7bpjg1pg"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
+
+[display]
+
+window/size/viewport_width=320
+window/size/viewport_height=180
+window/stretch/mode="viewport"
 
 [dotnet]
 
@@ -35,3 +41,11 @@ folder_colors={
 "res://scenes/": "pink",
 "res://scripts/": "yellow"
 }
+
+[physics]
+
+common/physics_interpolation=true
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
