@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqdks7bpjg1pg"]
+
+[ext_resource type="PackedScene" uid="uid://dpc641ba7og61" path="res://scenes/nodes/house.tscn" id="1_0uhcx"]
+[ext_resource type="Script" uid="uid://dktj705ga0mgk" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_n3ojt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0uhcx"]
+
+[node name="Joscene" type="Node2D"]
+
+[node name="House" parent="." instance=ExtResource("1_0uhcx")]
+visible = false
+
+[node name="Bubble" type="RigidBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bubble"]
+shape = SubResource("CircleShape2D_0uhcx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Bubble"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="PhantomCameraHost" type="Node" parent="Camera2D"]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("2_n3ojt")
+metadata/_custom_type_script = ExtResource("2_n3ojt")

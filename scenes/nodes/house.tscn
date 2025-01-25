@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpc641ba7og61"]
+
+[ext_resource type="Script" path="res://scenes/nodes/House.cs" id="1_6x6ra"]
+[ext_resource type="Texture2D" uid="uid://b8taosnfnqv7x" path="res://icon.svg" id="1_k556i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n3ojt"]
+size = Vector2(128, 128)
+
+[node name="House" type="RigidBody2D"]
+gravity_scale = 0.1
+script = ExtResource("1_6x6ra")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_n3ojt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_k556i")
