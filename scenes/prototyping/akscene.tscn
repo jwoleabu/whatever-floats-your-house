@@ -2,13 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://dpc641ba7og61" path="res://scenes/nodes/house.tscn" id="1_aldew"]
 [ext_resource type="PackedScene" uid="uid://dxvtu3aorp5ig" path="res://scenes/bubble.tscn" id="2_cd8n5"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="3_v8cnq"]
+[ext_resource type="Script" uid="uid://br3iva7bq4f4a" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="3_v8cnq"]
 [ext_resource type="Resource" uid="uid://bvpsai5ewla4o" path="res://resources/noise.tres" id="4_eou8k"]
 [ext_resource type="Texture2D" uid="uid://b8taosnfnqv7x" path="res://icon.svg" id="4_wstn5"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="5_27e6i"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="6_8gl47"]
-[ext_resource type="Script" path="res://scenes/prototyping/shake_manager.gd" id="7_cd8n5"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_noise_emitter_2d.gd" id="8_e5jwl"]
+[ext_resource type="Script" uid="uid://d0coeef2inoe0" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="5_27e6i"]
+[ext_resource type="Script" uid="uid://cg4nrodu8o4jr" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="6_8gl47"]
+[ext_resource type="Script" uid="uid://dqatpfnmyicma" path="res://scenes/prototyping/shake_manager.gd" id="7_cd8n5"]
+[ext_resource type="Script" uid="uid://b20su2ysl8rsh" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_noise_emitter_2d.gd" id="8_e5jwl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ee6gr"]
 size = Vector2(320, 16)
@@ -33,6 +33,7 @@ mass = 0.92
 gravity_scale = -1.1
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("house", "area1", "noise_emitter", "phantom_camera")]
+physics_interpolation_mode = 1
 position = Vector2(0, -15)
 process_callback = 0
 script = ExtResource("7_cd8n5")

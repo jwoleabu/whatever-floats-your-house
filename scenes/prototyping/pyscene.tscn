@@ -1,11 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://cqdks7bpjg1pg"]
+[gd_scene load_steps=9 format=3 uid="uid://cqdks7bpjg1pg"]
 
 [ext_resource type="PackedScene" uid="uid://dpc641ba7og61" path="res://scenes/nodes/house.tscn" id="1_0uhcx"]
 [ext_resource type="Texture2D" uid="uid://dqehysc2yinud" path="res://assets/Background1.png" id="1_ggr05"]
-[ext_resource type="Script" uid="uid://dktj705ga0mgk" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_n3ojt"]
-[ext_resource type="PackedScene" uid="uid://dxvtu3aorp5ig" path="res://scenes/bubble.tscn" id="2_w41qg"]
-[ext_resource type="Script" uid="uid://b6keqhs27pm75" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="3_3i002"]
-[ext_resource type="Script" uid="uid://rsc7ajvr33bu" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="6_w41qg"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_n3ojt"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="3_3i002"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="6_w41qg"]
 
 [sub_resource type="TileSet" id="TileSet_3i002"]
 
@@ -26,10 +25,8 @@ texture = ExtResource("1_ggr05")
 
 [node name="House" parent="." instance=ExtResource("1_0uhcx")]
 mass = 1.0
-BubbleScene = ExtResource("2_w41qg")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-physics_interpolation_mode = 1
 position = Vector2(0, -125)
 zoom = Vector2(0.5, 0.5)
 process_callback = 0
@@ -41,7 +38,15 @@ script = ExtResource("2_n3ojt")
 metadata/_custom_type_script = ExtResource("2_n3ojt")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+editor_description = ""
 tile_set = SubResource("TileSet_3i002")
+script = null
 
 [node name="Boundary3" type="StaticBody2D" parent="."]
 position = Vector2(-6, 35)
