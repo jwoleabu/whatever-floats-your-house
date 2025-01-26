@@ -1,24 +1,26 @@
 [gd_scene load_steps=4 format=3 uid="uid://dxvtu3aorp5ig"]
 
-[ext_resource type="Texture2D" uid="uid://b8taosnfnqv7x" path="res://icon.svg" id="1_2vdav"]
 [ext_resource type="Script" uid="uid://i8nhxvexilc1" path="res://scenes/Bubble.cs" id="1_pm753"]
+[ext_resource type="Texture2D" uid="uid://f0m8bl8yxm01" path="res://assets/BasicBubble.png" id="2_r21iw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0uhcx"]
 
 [node name="Bubble" type="RigidBody2D"]
+gravity_scale = -0.15
 script = ExtResource("1_pm753")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_0uhcx")
+disabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(2.68221e-07, 0)
-scale = Vector2(0.101563, 0.117188)
-texture = ExtResource("1_2vdav")
+scale = Vector2(2, 2.294)
+texture = ExtResource("2_r21iw")
 
 [node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="."]
 show_behind_parent = true
 position = Vector2(0, 10)
 node_a = NodePath("..")
-length = 10.0
-rest_length = 5.0
+length = 40.0
+rest_length = 40.0
