@@ -1,10 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://cqdks7bpjg1pg"]
+[gd_scene load_steps=12 format=3 uid="uid://cqdks7bpjg1pg"]
 
 [ext_resource type="PackedScene" uid="uid://dpc641ba7og61" path="res://scenes/nodes/house.tscn" id="1_0uhcx"]
 [ext_resource type="Texture2D" uid="uid://dqehysc2yinud" path="res://assets/Background1.png" id="1_ggr05"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_n3ojt"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="3_3i002"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="6_w41qg"]
+[ext_resource type="Script" uid="uid://dktj705ga0mgk" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_n3ojt"]
+[ext_resource type="PackedScene" uid="uid://dxvtu3aorp5ig" path="res://scenes/bubble.tscn" id="2_w41qg"]
+[ext_resource type="Script" uid="uid://b6keqhs27pm75" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="3_3i002"]
+[ext_resource type="Script" uid="uid://rsc7ajvr33bu" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="6_w41qg"]
+[ext_resource type="Texture2D" uid="uid://bmaoy2vmipmap" path="res://assets/Rock.png" id="7_ggr05"]
+[ext_resource type="Texture2D" uid="uid://c2tj0yknli2bb" path="res://assets/BasicPlane.png" id="8_tef8k"]
 
 [sub_resource type="TileSet" id="TileSet_3i002"]
 
@@ -24,12 +27,17 @@ scale = Vector2(2, 2)
 texture = ExtResource("1_ggr05")
 
 [node name="House" parent="." instance=ExtResource("1_0uhcx")]
+position = Vector2(-1, -35)
 mass = 1.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, -125)
+physics_interpolation_mode = 1
+position = Vector2(-1, -127)
 zoom = Vector2(0.5, 0.5)
 process_callback = 0
+limit_left = -1000
+limit_top = -5067
+limit_bottom = 53
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D"]
 process_priority = 300
@@ -73,15 +81,30 @@ shape = SubResource("WorldBoundaryShape2D_w41qg")
 
 [node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_target")]
 top_level = true
-position = Vector2(0, -125)
+position = Vector2(-1, -127)
 script = ExtResource("3_3i002")
 follow_mode = 5
 follow_target = NodePath("../House")
 zoom = Vector2(0.5, 0.5)
 tween_resource = SubResource("Resource_ggr05")
-follow_offset = Vector2(0, -125)
+follow_offset = Vector2(0, -90)
 follow_axis_lock = 1
 dead_zone_width = 0.5
+limit_left = -1000
+limit_top = -5067
+limit_bottom = 53
 metadata/_custom_type_script = ExtResource("3_3i002")
+
+[node name="Rock" type="Sprite2D" parent="."]
+position = Vector2(-203, 27)
+scale = Vector2(2, 2)
+texture = ExtResource("7_ggr05")
+
+[node name="BasicPlane" type="Sprite2D" parent="."]
+position = Vector2(-105, -140)
+scale = Vector2(4, 4)
+texture = ExtResource("8_tef8k")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BasicPlane"]
 
 [editable path="House"]

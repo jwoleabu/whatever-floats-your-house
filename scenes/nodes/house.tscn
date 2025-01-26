@@ -1,10 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://dpc641ba7og61"]
+[gd_scene load_steps=6 format=3 uid="uid://dpc641ba7og61"]
 
 [ext_resource type="Script" uid="uid://dp21eypxh3du5" path="res://scenes/nodes/House.cs" id="1_6x6ra"]
 [ext_resource type="Texture2D" uid="uid://d2eeh2bf4v8rc" path="res://assets/HouseWIP.png" id="2_6x6ra"]
+[ext_resource type="AudioStream" uid="uid://bku4ov3x5t5wu" path="res://assets/music/spacemusic.mp3" id="3_lj6w3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n3ojt"]
-size = Vector2(32, 32)
+size = Vector2(50, 38)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6x6ra"]
 radius = 1.0
@@ -14,6 +15,7 @@ mass = 0.145
 script = ExtResource("1_6x6ra")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 12)
 shape = SubResource("RectangleShape2D_n3ojt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -72,3 +74,7 @@ shape = SubResource("CircleShape2D_6x6ra")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1
 one_shot = true
+
+[node name="spacemusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_lj6w3")
+parameters/looping = false
