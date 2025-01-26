@@ -1,3 +1,25 @@
-[gd_scene format=3 uid="uid://bfvguqee6jtp4"]
+[gd_scene load_steps=4 format=3 uid="uid://bfvguqee6jtp4"]
+
+[ext_resource type="Script" path="res://scenes/prototyping/enemy.gd" id="1_3u1qd"]
+[ext_resource type="Texture2D" uid="uid://c2tj0yknli2bb" path="res://assets/BasicPlane.png" id="1_75bei"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5abkp"]
+radius = 5.0
+height = 26.0
 
 [node name="Hscene" type="Node2D"]
+
+[node name="Enemy" type="Node2D" parent="."]
+position = Vector2(3, 53)
+rotation = 0.00316481
+script = ExtResource("1_3u1qd")
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemy"]
+texture = ExtResource("1_75bei")
+
+[node name="Collider2" type="Area2D" parent="Enemy/Sprite2D"]
+rotation = -0.00409965
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/Sprite2D/Collider2"]
+rotation = 1.57397
+shape = SubResource("CapsuleShape2D_5abkp")
