@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cqdks7bpjg1pg"]
+[gd_scene load_steps=12 format=3 uid="uid://cqdks7bpjg1pg"]
 
 [ext_resource type="PackedScene" uid="uid://dpc641ba7og61" path="res://scenes/nodes/house.tscn" id="1_0uhcx"]
 [ext_resource type="Texture2D" uid="uid://dqehysc2yinud" path="res://assets/Background1.png" id="1_ggr05"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://dxvtu3aorp5ig" path="res://scenes/bubble.tscn" id="2_w41qg"]
 [ext_resource type="Script" uid="uid://b6keqhs27pm75" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="3_3i002"]
 [ext_resource type="Script" uid="uid://rsc7ajvr33bu" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="6_w41qg"]
+[ext_resource type="Texture2D" uid="uid://bmaoy2vmipmap" path="res://assets/Rock.png" id="7_ggr05"]
+[ext_resource type="Texture2D" uid="uid://c2tj0yknli2bb" path="res://assets/BasicPlane.png" id="8_tef8k"]
 
 [sub_resource type="TileSet" id="TileSet_3i002"]
 
@@ -85,5 +87,17 @@ limit_left = -1000
 limit_top = -5067
 limit_bottom = 53
 metadata/_custom_type_script = ExtResource("3_3i002")
+
+[node name="Rock" type="Sprite2D" parent="."]
+position = Vector2(-203, 27)
+scale = Vector2(2, 2)
+texture = ExtResource("7_ggr05")
+
+[node name="BasicPlane" type="Sprite2D" parent="."]
+position = Vector2(-105, -140)
+scale = Vector2(4, 4)
+texture = ExtResource("8_tef8k")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BasicPlane"]
 
 [editable path="House"]
