@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dpc641ba7og61"]
 
-[ext_resource type="Script" path="res://scenes/nodes/House.cs" id="1_6x6ra"]
-[ext_resource type="Texture2D" uid="uid://b8taosnfnqv7x" path="res://icon.svg" id="1_k556i"]
+[ext_resource type="Script" uid="uid://dp21eypxh3du5" path="res://scenes/nodes/House.cs" id="1_6x6ra"]
+[ext_resource type="Texture2D" uid="uid://d2eeh2bf4v8rc" path="res://assets/HouseWIP.png" id="2_6x6ra"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n3ojt"]
 size = Vector2(32, 32)
@@ -17,8 +17,7 @@ script = ExtResource("1_6x6ra")
 shape = SubResource("RectangleShape2D_n3ojt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_k556i")
+texture = ExtResource("2_6x6ra")
 
 [node name="anchors" type="Node2D" parent="."]
 

@@ -4,21 +4,6 @@ using System.Diagnostics;
 
 public partial class Bubble : RigidBody2D
 {
-	private DampedSpringJoint2D _springJoint;
-	private RigidBody2D player;
-
-	public override void _Ready()
-	{
-		player = GetNode<RigidBody2D>("/root/Joscene/House");
-		GD.Print(player.ToString());
-		_springJoint = GetNode<DampedSpringJoint2D>("DampedSpringJoint2D");
-		ConnectToHouse();
-	}
-
-	public void ConnectToHouse()
-	{
-		_springJoint.NodeB = player.GetPath();
-	}
     private DampedSpringJoint2D _springJoint;
     private RigidBody2D player;
     private Node2D nodeA;
@@ -42,13 +27,14 @@ public partial class Bubble : RigidBody2D
         {
             return;
         }
-        DrawLine(nodeA.Position, nodeB.Position, Colors.Red, 2f);
+        DrawLine(nodeA.Position, nodeB.Position, Colors.White, 2f);
     }
 
-    public override void _Process(double delta)
+    public override void _PhysicsProcess(double delta)
     {
         QueueRedraw();
     }
+
 
     public void ConnectToHouse()
     {

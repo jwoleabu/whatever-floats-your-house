@@ -1,12 +1,12 @@
 [gd_scene load_steps=4 format=3 uid="uid://dxvtu3aorp5ig"]
 
-[ext_resource type="Script" path="res://scenes/Bubble.cs" id="1_pm753"]
+[ext_resource type="Script" uid="uid://i8nhxvexilc1" path="res://scenes/Bubble.cs" id="1_pm753"]
 [ext_resource type="Texture2D" uid="uid://f0m8bl8yxm01" path="res://assets/BasicBubble.png" id="2_r21iw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0uhcx"]
 
 [node name="Bubble" type="RigidBody2D"]
-gravity_scale = -0.725
+gravity_scale = -0.15
 script = ExtResource("1_pm753")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

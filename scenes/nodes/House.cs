@@ -9,11 +9,19 @@ public partial class House : RigidBody2D
     private RigidBody2D _prevBubble;
     private Node2D parentScene;
     private Timer _cooldownTimer;
-    [Export] public Dictionary<StaticBody2D, Boolean> StaticBodies = new Dictionary<StaticBody2D, Boolean>();
+    [Export] public Dictionary<Node2D, Boolean> StaticBodies = new Dictionary<Node2D, Boolean>();
 
     public override void _Ready()
     {
         parentScene = GetParent<Node2D>();
+        StaticBodies.Add(GetNode<Node2D>("anchors/StaticBody2D"), false);
+        StaticBodies.Add(GetNode<Node2D>("anchors/StaticBody2D3"), false);
+        StaticBodies.Add(GetNode<Node2D>("anchors/StaticBody2D5"), false);
+        StaticBodies.Add(GetNode<Node2D>("anchors/StaticBody2D7"), false);
+        StaticBodies.Add(GetNode<Node2D>("anchors/StaticBody2D9"), false);
+        StaticBodies.Add(GetNode<Node2D>("anchors/StaticBody2D11"), false);
+        StaticBodies.Add(GetNode<Node2D>("anchors/StaticBody2D12"), false);
+        StaticBodies.Add(GetNode<Node2D>("anchors/StaticBody2D13"), false);
         _cooldownTimer = GetNode<Timer>("Timer");
     }
 
