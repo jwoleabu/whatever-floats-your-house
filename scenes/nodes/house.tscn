@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dpc641ba7og61"]
+[gd_scene load_steps=5 format=3 uid="uid://dpc641ba7og61"]
 
 [ext_resource type="Script" uid="uid://dp21eypxh3du5" path="res://scenes/nodes/House.cs" id="1_6x6ra"]
 [ext_resource type="Texture2D" uid="uid://b8taosnfnqv7x" path="res://icon.svg" id="1_k556i"]
@@ -6,7 +6,11 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n3ojt"]
 size = Vector2(32, 32)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_6x6ra"]
+radius = 1.0
+
 [node name="House" type="RigidBody2D"]
+mass = 0.145
 script = ExtResource("1_6x6ra")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -15,3 +19,57 @@ shape = SubResource("RectangleShape2D_n3ojt")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_k556i")
+
+[node name="anchors" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="anchors"]
+position = Vector2(-16, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="anchors/StaticBody2D"]
+shape = SubResource("CircleShape2D_6x6ra")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="anchors"]
+position = Vector2(-10, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="anchors/StaticBody2D3"]
+shape = SubResource("CircleShape2D_6x6ra")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="anchors"]
+position = Vector2(-4, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="anchors/StaticBody2D5"]
+shape = SubResource("CircleShape2D_6x6ra")
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="anchors"]
+position = Vector2(2, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="anchors/StaticBody2D7"]
+shape = SubResource("CircleShape2D_6x6ra")
+
+[node name="StaticBody2D9" type="StaticBody2D" parent="anchors"]
+position = Vector2(8, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="anchors/StaticBody2D9"]
+shape = SubResource("CircleShape2D_6x6ra")
+
+[node name="StaticBody2D11" type="StaticBody2D" parent="anchors"]
+position = Vector2(14, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="anchors/StaticBody2D11"]
+shape = SubResource("CircleShape2D_6x6ra")
+
+[node name="StaticBody2D12" type="StaticBody2D" parent="anchors"]
+position = Vector2(18, -14)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="anchors/StaticBody2D12"]
+shape = SubResource("CircleShape2D_6x6ra")
+
+[node name="StaticBody2D13" type="StaticBody2D" parent="anchors"]
+position = Vector2(-19, -14)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="anchors/StaticBody2D13"]
+shape = SubResource("CircleShape2D_6x6ra")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true

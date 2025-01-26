@@ -6,10 +6,12 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_0uhcx"]
 
 [node name="Bubble" type="RigidBody2D"]
+gravity_scale = -0.725
 script = ExtResource("1_pm753")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_0uhcx")
+disabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(2.68221e-07, 0)
@@ -20,5 +22,5 @@ texture = ExtResource("1_2vdav")
 show_behind_parent = true
 position = Vector2(0, 10)
 node_a = NodePath("..")
-length = 10.0
-rest_length = 5.0
+length = 40.0
+rest_length = 40.0
