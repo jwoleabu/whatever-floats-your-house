@@ -1,11 +1,11 @@
 [gd_scene load_steps=10 format=3 uid="uid://cqdks7bpjg1pg"]
 
 [ext_resource type="PackedScene" uid="uid://dpc641ba7og61" path="res://scenes/nodes/house.tscn" id="1_0uhcx"]
-[ext_resource type="Script" uid="uid://dktj705ga0mgk" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_n3ojt"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_n3ojt"]
 [ext_resource type="PackedScene" uid="uid://dxvtu3aorp5ig" path="res://scenes/bubble.tscn" id="2_w41qg"]
-[ext_resource type="Script" uid="uid://b6keqhs27pm75" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="3_3i002"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="3_3i002"]
 [ext_resource type="Texture2D" uid="uid://b8taosnfnqv7x" path="res://icon.svg" id="5_namwe"]
-[ext_resource type="Script" uid="uid://rsc7ajvr33bu" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="6_w41qg"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="6_w41qg"]
 
 [sub_resource type="TileSet" id="TileSet_3i002"]
 

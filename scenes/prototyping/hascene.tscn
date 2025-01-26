@@ -1,3 +1,20 @@
-[gd_scene format=3 uid="uid://bfvguqee6jtp4"]
+[gd_scene load_steps=3 format=3 uid="uid://bfvguqee6jtp4"]
+
+[ext_resource type="Texture2D" uid="uid://c2tj0yknli2bb" path="res://assets/BasicPlane.png" id="1_75bei"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5abkp"]
+radius = 5.0
+height = 26.0
 
 [node name="Hscene" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 0.00316481
+texture = ExtResource("1_75bei")
+
+[node name="Collider2" type="Area2D" parent="."]
+rotation = -0.000934838
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collider2"]
+rotation = 1.57397
+shape = SubResource("CapsuleShape2D_5abkp")
