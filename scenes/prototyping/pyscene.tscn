@@ -25,14 +25,18 @@ scale = Vector2(2, 2)
 texture = ExtResource("1_ggr05")
 
 [node name="House" parent="." instance=ExtResource("1_0uhcx")]
+position = Vector2(-1, -35)
 mass = 1.0
 BubbleScene = ExtResource("2_w41qg")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 physics_interpolation_mode = 1
-position = Vector2(0, -125)
+position = Vector2(-1, -127)
 zoom = Vector2(0.5, 0.5)
 process_callback = 0
+limit_left = -1000
+limit_top = -5067
+limit_bottom = 53
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D"]
 process_priority = 300
@@ -68,15 +72,18 @@ shape = SubResource("WorldBoundaryShape2D_w41qg")
 
 [node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_target")]
 top_level = true
-position = Vector2(0, -125)
+position = Vector2(-1, -127)
 script = ExtResource("3_3i002")
 follow_mode = 5
 follow_target = NodePath("../House")
 zoom = Vector2(0.5, 0.5)
 tween_resource = SubResource("Resource_ggr05")
-follow_offset = Vector2(0, -125)
+follow_offset = Vector2(0, -90)
 follow_axis_lock = 1
 dead_zone_width = 0.5
+limit_left = -1000
+limit_top = -5067
+limit_bottom = 53
 metadata/_custom_type_script = ExtResource("3_3i002")
 
 [editable path="House"]

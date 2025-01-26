@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d2eeh2bf4v8rc" path="res://assets/HouseWIP.png" id="2_6x6ra"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n3ojt"]
-size = Vector2(32, 32)
+size = Vector2(102, 81)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6x6ra"]
 radius = 1.0
@@ -14,12 +14,15 @@ mass = 0.145
 script = ExtResource("1_6x6ra")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 20.5)
 shape = SubResource("RectangleShape2D_n3ojt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
 texture = ExtResource("2_6x6ra")
 
 [node name="anchors" type="Node2D" parent="."]
+position = Vector2(0, -13)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="anchors"]
 position = Vector2(-16, -18)
