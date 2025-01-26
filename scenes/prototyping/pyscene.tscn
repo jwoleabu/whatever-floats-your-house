@@ -20,17 +20,23 @@ ease = 2
 
 [node name="Joscene" type="Node2D"]
 
-[node name="House" parent="." instance=ExtResource("1_0uhcx")]
-position = Vector2(0, 25)
-
-[node name="Bubble" parent="." instance=ExtResource("2_w41qg")]
-position = Vector2(0, -12)
-mass = 0.92
-gravity_scale = -1.1
+[node name="House" parent="." node_paths=PackedStringArray("StaticBodies") instance=ExtResource("1_0uhcx")]
+BubbleScene = ExtResource("2_w41qg")
+StaticBodies = {
+NodePath("anchors/StaticBody2D"): false,
+NodePath("anchors/StaticBody2D3"): false,
+NodePath("anchors/StaticBody2D5"): false,
+NodePath("anchors/StaticBody2D7"): false,
+NodePath("anchors/StaticBody2D9"): false,
+NodePath("anchors/StaticBody2D11"): false,
+NodePath("anchors/StaticBody2D12"): false,
+NodePath("anchors/StaticBody2D13"): false
+}
 
 [node name="Camera2D" type="Camera2D" parent="."]
 physics_interpolation_mode = 1
-position = Vector2(0, -15)
+position = Vector2(0, -125)
+zoom = Vector2(0.5, 0.5)
 process_callback = 0
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D"]
@@ -43,25 +49,32 @@ metadata/_custom_type_script = ExtResource("2_n3ojt")
 tile_set = SubResource("TileSet_3i002")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, 45)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0, 82)
 shape = SubResource("RectangleShape2D_3i002")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(-8.10623e-06, 82)
 scale = Vector2(2.5, 0.125)
 texture = ExtResource("5_namwe")
 
 [node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_target")]
 top_level = true
-position = Vector2(0, -15)
+position = Vector2(0, -125)
 script = ExtResource("3_3i002")
 follow_mode = 5
 follow_target = NodePath("../House")
+zoom = Vector2(0.5, 0.5)
 tween_resource = SubResource("Resource_ggr05")
-follow_offset = Vector2(0, -40)
+follow_offset = Vector2(0, -125)
 follow_axis_lock = 1
 dead_zone_width = 0.5
-show_viewfinder_in_play = true
 metadata/_custom_type_script = ExtResource("3_3i002")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.45912, 0.0958028, 0.111508, 0.345098)
+position = Vector2(2, -10916)
+scale = Vector2(2.5, 171.266)
+texture = ExtResource("5_namwe")
+
+[editable path="House"]
