@@ -29,7 +29,6 @@ texture = ExtResource("1_ggr05")
 [node name="House" parent="." instance=ExtResource("1_0uhcx")]
 position = Vector2(-1, -35)
 mass = 1.0
-BubbleScene = ExtResource("2_w41qg")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 physics_interpolation_mode = 1
@@ -47,7 +46,15 @@ script = ExtResource("2_n3ojt")
 metadata/_custom_type_script = ExtResource("2_n3ojt")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+editor_description = ""
 tile_set = SubResource("TileSet_3i002")
+script = null
 
 [node name="Boundary3" type="StaticBody2D" parent="."]
 position = Vector2(-6, 35)
